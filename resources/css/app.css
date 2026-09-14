@@ -1,0 +1,293 @@
+/* Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* ─── Alpine.js cloak ─── */
+[x-cloak] {
+    display: none !important;
+}
+
+/* Custom styles */
+:root {
+    --quiz-primary: #2563eb;
+    --quiz-primary-dark: #1e40af;
+}
+
+body {
+    background-color: #f3f4f6;
+}
+
+/* Custom range slider */
+input[type="range"].slider-custom {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    border-radius: 9999px;
+    outline: none;
+    width: 100%;
+}
+
+input[type="range"].slider-custom::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #ffffff;
+    border: 4px solid var(--quiz-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+input[type="range"].slider-custom::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: #ffffff;
+    border: 4px solid var(--quiz-primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Category cards */
+.category-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.category-card:hover {
+    border-color: #93c5fd;
+    background-color: #f9fafb;
+}
+
+.category-card.selected,
+.category-card:has(input:checked) {
+    border-color: var(--quiz-primary);
+    background-color: #eff6ff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Answer options */
+.answer-option {
+    display: block;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.answer-option:hover {
+    border-color: #93c5fd;
+    background-color: #f9fafb;
+}
+
+.answer-option.selected,
+.answer-option:has(input:checked) {
+    border-color: var(--quiz-primary);
+    background-color: #eff6ff;
+}
+
+/* Answer correct (για study mode) */
+.answer-option.correct {
+    border-color: #10b981 !important;
+    background-color: #ecfdf5 !important;
+}
+
+/* Custom radio */
+.custom-radio {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #d1d5db;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.answer-option.selected .custom-radio,
+.answer-option:has(input:checked) .custom-radio {
+    background-color: var(--quiz-primary);
+    border-color: var(--quiz-primary);
+}
+
+.answer-option.selected .custom-radio::after,
+.answer-option:has(input:checked) .custom-radio::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.progress-dots{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* ─── Quiz Index ─── */
+.category-card {
+    min-height: 90px;
+    width: 100%;
+}
+
+.category-check {
+    transition: all 0.2s;
+}
+
+/* ─── Home Cards ─── */
+.home-card h2 {
+    margin-top: 0;
+}
+
+.home-card-icon {
+    transition: transform 0.3s ease;
+}
+
+/* ─── Quiz Play ─── */
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+.custom-radio {
+    transition: all 0.2s;
+}
+
+/* ─── Result Page ─── */
+.text-decoration-line-through {
+    text-decoration: line-through !important;
+    opacity: 0.7;
+}
+
+/* ─── Modal ─── */
+.modal-backdrop-custom {
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Modal fade-in */
+.modal-fade-in {
+    animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ─── Study Show ─── */
+.card-quiz + .card-quiz {
+    transition: box-shadow 0.2s ease;
+}
+
+.card-quiz:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Smooth hover στη μελέτη */
+.card-quiz .rounded-3 {
+    transition: all 0.2s ease;
+}
+
+/* ─── Leaderboard Podium ─── */
+.podium-1 {
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    transform: scale(1.05);
+}
+
+.podium-2 {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+.podium-3 {
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+}
+
+/* Table hover */
+.table-hover tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 576px) {
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    .display-1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* ─── Mobile Navigation ─── */
+@media (max-width: 991.98px) {
+    .navbar-quiz .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+        color: #374151;
+    }
+
+    .navbar-quiz .navbar-toggler:hover {
+        background-color: #f3f4f6;
+        border-radius: 0.5rem;
+    }
+
+    .navbar-quiz .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+        border-radius: 0.5rem;
+    }
+}
+
+/* Mobile menu animation */
+.navbar-quiz .mobile-menu-enter {
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile nav links */
+@media (max-width: 991.98px) {
+    .navbar-quiz .nav-link {
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        border-bottom: none;
+    }
+
+    .navbar-quiz .nav-link.active {
+        background-color: #eff6ff;
+        color: var(--quiz-primary);
+    }
+
+    .navbar-quiz .nav-link:hover {
+        background-color: #f3f4f6;
+    }
+}

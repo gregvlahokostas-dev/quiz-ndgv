@@ -45,7 +45,7 @@
 
 ```bash
 # Clone
-git clone https://github.com/gregvlahokostas-dev/quiz-asep.git
+https://github.com/gregvlahokostas-dev/quiz-ndgv.git
 cd quiz-asep
 
 # Dependencies
